@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-image: url(../img/large.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+}
+.color-white{
+    color: rgba(255, 255, 248, 0.69);
+}
+#receptor{
+    border-radius: 3%;
+    color: aliceblue;
+    width: 100%;    
+}
