@@ -11,12 +11,25 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
+        <nav class="bg-color-blue">
+            <div>
+                <a href="#" class="brand-logo"><img src="img/logo.png" alt="Logo"></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#"><i class="material-icons">&#xE88A;</i></a></li>
+                    <li><a href="#"><i class="material-icons">&#xE87A;</i></a></li>
+                    <li><a href="#"><i class="material-icons">&#xE0D8;</i></a></li>
+                    <li><a href="#"><i class="material-icons">&#xE254;</i></a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="divider"></div>
+
         <div class="row center">
             <div class="col s3 m3 l3">
                 <i class="medium material-icons color-white">&#xE262;</i>
                 <br>
-                <div class="btn" id="texto"><span>TEXTO</span></div>
+                <div class="btn" id="texto">TEXTO</div>
             </div>
             <div class="col s3 m3 l3">
                 <i class="medium material-icons color-white">&#xE244;</i>
@@ -26,7 +39,7 @@
             <div class="col s3 m3 l3">
                 <i class="medium material-icons color-white">&#xE8AB;</i>
                 <br>
-                <div class="btn" id="link">Link</div>
+                <div class="btn" id="link">LINK</div>
             </div>
             <div class="col s3 m3 l3">
                 <i class="medium material-icons color-white">&#xE89A;</i>
@@ -34,12 +47,14 @@
                 <div class="btn" id="frase">PASTILLA</div>
             </div>
         </div>
-        <div class="row center">
-            <div id="receptor"></div>
+        <div class="row">
+           <div class="col offset-m2 offset-l2 s12 m8 l8  ">
+               <div id="receptor" class="z-depth-4"></div>
+           </div>
         </div>
     </div>
-    
+
     <script src="js/app.js"></script>
 </body>
 
-</html> 
+</html>

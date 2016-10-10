@@ -8,11 +8,18 @@ body{
     background-repeat: repeat;
     background-size: cover;
 }
+.bg-color-blue{
+    background-color: #36465D;
+}
 .color-white{
     color: rgba(255, 255, 248, 0.69);
 }
 #receptor{
+    background-color:aliceblue;
     border-radius: 3%;
-    color: aliceblue;
-    width: 100%;    
+    padding: 12px 23px 18px 23px;
+    width: 100%;
+}
+.botonAgregar{
+    margin: 5%;
 }
