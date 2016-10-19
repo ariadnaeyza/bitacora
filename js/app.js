@@ -1,81 +1,107 @@
 window.addEventListener('load',function(){
     
-    //VARIABLES
     var botonTexto = document.getElementById("texto");
     var botonCita = document.getElementById("cita")
     var botonLink = document.getElementById("link");
     var botonFrase = document.getElementById("frase");
     var receptor = document.getElementById("receptor");
-
-    //FUNCIONES
     
     function postTexto(){
+        var postTexto = document.createElement("div");
         var titulo = document.createElement("textarea");
         titulo.placeholder="Escribe un 'Titulo'...";
         var titutoTitulo = document.createElement("label");
         titutoTitulo.innerHTML="Titulo:";
-        var textArea = document.createElement("textarea");    
-        textArea.placeholder="Escriba un texto...";
-        var textAreaTitulo = document.createElement("label");
-        textAreaTitulo.innerHTML="Texto:"
+        var texto = document.createElement("textarea");    
+        texto.placeholder="Escriba un texto...";
+        var textoTitulo = document.createElement("label");
+        textoTitulo.innerHTML="Texto:"
         var botonBorrar = document.createElement("button");
         botonBorrar.innerHTML="ELIMINAR";
         var botonAgregar = document.createElement("button");
         botonAgregar.innerHTML="AGREGAR";
 
-        titulo.classList.add("materialize-textarea");
-        textArea.classList.add("materialize-textarea");
-        textArea.getAttribute("id","icon_prefix2");
-        textArea.rows = "6";
-        botonBorrar.classList.add("btn-large", "waves-effect","red");
+        receptor.appendChild(postTexto);
+        postTexto.appendChild(titutoTitulo);
+        postTexto.appendChild(titulo);
+        postTexto.appendChild(textoTitulo);
+        postTexto.appendChild(texto);
+        postTexto.appendChild(botonBorrar);
+        postTexto.appendChild(botonAgregar);
+
+        postTexto.classList.add("postTexto")
+        titulo.classList.add("materialize-textarea", "titulo");
+        texto.classList.add("materialize-textarea", "texto");
+        texto.getAttribute("id","icon_prefix2");
+        texto.rows = "6";
+        botonBorrar.classList.add("botonBorrar","btn-large","waves-effect","red");
         botonAgregar.classList.add("botonAgregar","btn-large", "waves-effect","pink");
 
-        receptor.appendChild(titutoTitulo);
-        receptor.appendChild(titulo);
-        receptor.appendChild(textAreaTitulo);
-        receptor.appendChild(textArea);
-        receptor.appendChild(botonBorrar);
-        receptor.appendChild(botonAgregar);
+        botonAgregar.addEventListener("click", function(){
+            
+            postTexto.style.display = "none";
+            
+            var post = document.createElement("div");
+            var hTitulo = document.createElement("h2");
+            var pTexto = document.createElement("p");
+            var newBtnBorrar = document.createElement("button");
+            
+            receptor.appendChild(post);
+            post.appendChild(hTitulo);
+            post.appendChild(pTexto);
+            post.appendChild(newBtnBorrar);
+            
+            hTitulo.innerHTML = titulo.value;
+            pTexto.innerHTML = texto.value;
+            newBtnBorrar.innerHTML = "ELIMINAR";
+            
+            post.classList.add("post");
+            hTitulo.classList.add("hTitulo");
+            pTexto.classList.add("pTexto");
+            newBtnBorrar.classList.add("botonBorrar","btn-large","waves-effect","red","center-align");
+            
+            newBtnBorrar.addEventListener("click",function(e){
+                e.preventDefault();
+                this.parentElement.remove();  
+            });
+        });
 
-        botonBorrar.addEventListener("click", function(){
+        botonBorrar.addEventListener("click", function(e){
+            e.preventDefault();
             this.parentElement.remove();
         });  
     }
-    
+
     function postCita(){
         postTexto.call(this);
-        
+
     }
-    
+
     function postLink(){
         postTexto.call(this);
-        
+
     }
-    
+
     function postFrase(){
         postTexto.call(this);
-        
-    }
-    
-    function postPublicar(){
-        
 
     }
-    
-    
+
     //EVENTOS
-    botonTexto.addEventListener("click",function(){
+    botonTexto.addEventListener("click",function(e){
+        e.preventDefault();
         postTexto();
     });
-    botonCita.addEventListener("click",function(){
+    botonCita.addEventListener("click",function(e){
+        e.preventDefault();
         postCita();
     });
-    botonLink.addEventListener("click",function(){
+    botonLink.addEventListener("click",function(e){
+        e.preventDefault();
         postLink();
     });
-    botonFrase.addEventListener("click",function(){
+    botonFrase.addEventListener("click",function(e){
+        e.preventDefault();
         postFrase();
     });
-     
-
 });
