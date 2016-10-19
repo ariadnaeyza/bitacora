@@ -37,7 +37,19 @@ window.addEventListener('load',function(){
         botonBorrar.classList.add("botonBorrar","btn-large","waves-effect","red");
         botonAgregar.classList.add("botonAgregar","btn-large", "waves-effect","pink");
 
-        botonAgregar.addEventListener("click", function(){
+        botonAgregar.addEventListener("click", function(e){
+            e.preventDefault();
+            
+            if(titulo.value.length == 0){
+                alert("El textarea esta vacio");
+                titulo.style.display = "block";
+                texto.style.display = "inline-block";
+                return false;
+            } else if (texto.value.length == 0){
+                alert("El textarea esta vacio");
+                texto.style.display = "inline-block";
+                return false;
+            }
             
             postTexto.style.display = "none";
             
