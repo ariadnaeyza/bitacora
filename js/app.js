@@ -87,7 +87,6 @@ window.addEventListener('load',function(){
 
     }
 
-    //EVENTOS
     botonTexto.addEventListener("click",function(e){
         e.preventDefault();
         postTexto();
