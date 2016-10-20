@@ -22,6 +22,7 @@ body{
     border-radius: 3%;
     padding: 12px 23px 18px 23px;
     width: 100%;
+    display: none;
 }
 .botonAgregar{
     margin: 5%;

@@ -51,6 +51,17 @@ window.addEventListener('load',function(){
                 return false;
             }
             
+            if(titulo.value.length == 0){
+                alert("El textarea esta vacio");
+                titulo.style.display = "block";
+                texto.style.display = "inline-block";
+                return false;
+            } else if (texto.value.length == 0){
+                alert("El textarea esta vacio");
+                texto.style.display = "inline-block";
+                return false;
+            }
+            
             postTexto.style.display = "none";
             
             var post = document.createElement("div");
@@ -77,7 +88,6 @@ window.addEventListener('load',function(){
                 this.parentElement.remove();  
             });
         });
-
         botonBorrar.addEventListener("click", function(e){
             e.preventDefault();
             this.parentElement.remove();
@@ -86,27 +96,25 @@ window.addEventListener('load',function(){
 
     function postCita(){
         postTexto.call(this);
-
     }
 
     function postLink(){
         postTexto.call(this);
-
     }
 
     function postFrase(){
         postTexto.call(this);
-
     }
 
-    //EVENTOS
     botonTexto.addEventListener("click",function(e){
         e.preventDefault();
+        receptor.style.display="block";
         postTexto();
     });
     botonCita.addEventListener("click",function(e){
         e.preventDefault();
         postCita();
+        receptor.style.display="block";
     });
     botonLink.addEventListener("click",function(e){
         e.preventDefault();
@@ -115,5 +123,6 @@ window.addEventListener('load',function(){
     botonFrase.addEventListener("click",function(e){
         e.preventDefault();
         postFrase();
+        receptor.style.display="block";
     });
 });
